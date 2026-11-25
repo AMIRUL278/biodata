@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amirul Firman Albaihaqi | Digital Student Identity</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Cinzel untuk sentuhan akademik moden & klasik -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon Profesional -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Cinzel"', 'serif'],
+                    },
+                    colors: {
+                        emerald: {
+                            850: '#064e3b',
+                            925: '#032e23',
+                            950: '#021f17',
+                        },
+                        gold: {
+                            champagne: '#F5E6C8',
+                            soft: '#E2C07D',
+                            rich: '#C59B48',
+                            glow: 'rgba(226, 192, 125, 0.35)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Pengasingan gaya dan pemboleh ubah warna untuk keserasian Jotform & Embed */
+        :root {
+            --forest-dark: #021f17;
+            --emerald-deep: #064e3b;
+            --emerald-mid: #047857;
+            --gold-soft: #e2c07d;
+            --champagne: #f5e6c8;
+        }
+
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            background-color: var(--forest-dark);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Latar Belakang Corak Geometri Islamik Halus & Bergerak */
+        .islamic-pattern-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23e2c07d' stroke-width='0.6' stroke-opacity='0.14'%3E%3Cpath d='M40 0L49.5 23.5L73 14L63.5 37.5L80 40L63.5 42.5L73 66L49.5 56.5L40 80L30.5 56.5L7 66L16.5 42.5L0 40L16.5 37.5L7 14L30.5 23.5Z'/%3E%3Ccircle cx='40' cy='40' r='14'/%3E%3Crect x='26' y='26' width='28' height='28' transform='rotate(45 40 40)'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 90px 90px;
+            animation: driftPattern 45s linear infinite;
+        }
+
+        @keyframes driftPattern {
+            0% { background-position: 0 0; }
+            100% { background-position: 180px 180px; }
+        }
+
+        /* Kesan Glassmorphism Premium */
+        .glass-card {
+            background: rgba(6, 78, 59, 0.28);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(226, 192, 125, 0.22);
+            box-shadow: 0 12px 35px -8px rgba(0, 0, 0, 0.55);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(226, 192, 125, 0.65);
+            box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.7), 0 0 22px rgba(226, 192, 125, 0.18);
+            background: rgba(6, 78, 59, 0.42);
+        }
+
+        .glass-nav {
+            background: rgba(2, 31, 23, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(226, 192, 125, 0.2);
+        }
+
+        /* Bingkai Foto Moden & Glow */
+        .photo-frame-glow {
+            box-shadow: 0 0 35px rgba(16, 185, 129, 0.25), 0 0 60px rgba(226, 192, 125, 0.15);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+        .photo-frame-glow:hover {
+            box-shadow: 0 0 45px rgba(16, 185, 129, 0.4), 0 0 75px rgba(226, 192, 125, 0.28);
+        }
+
+        /* Animasi Flip Card 3D untuk Kad Pelajar Digital */
+        .flip-perspective {
+            perspective: 1200px;
+        }
+        .flip-inner {
+            position: relative;
+            width: 100%;
+            min-height: 340px;
+            transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .flip-perspective.is-flipped .flip-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-front, .flip-back {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 1.5rem;
+        }
+        .flip-back {
+            transform: rotateY(180deg);
+        }
+
+        /* Animasi Kemunculan Teks & Elemen (Scroll Reveal) */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-element.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Teks Gradien Emas & Zamrud */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #F5E6C8 0%, #E2C07D 50%, #C59B48 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #021f17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #065f46;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e2c07d;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-emerald-600 selection:text-white relative">
+
+    <!-- Lapisan Latar Belakang Geometri Islamik & Cahaya Ambient -->
+    <div class="fixed inset-0 islamic-pattern-bg pointer-events-none z-0"></div>
+    <div class="fixed top-[-10%] left-[-10%] w-[45vw] h-[45vw] rounded-full bg-emerald-600/15 blur-[130px] pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-amber-500/10 blur-[130px] pointer-events-none z-0"></div>
+
+    <!-- BAR NAVIGASI INTERAKTIF -->
+    <header class="sticky top-0 z-40 glass-nav w-full">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Identiti Jenama Akademik -->
+                <a href="#hero" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-800 border border-gold-soft/50 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                        <span class="font-serif font-bold text-gold-champagne text-lg">AF</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xs tracking-[0.2em] text-gold-soft uppercase font-semibold">Digital Identity</span>
+                        <span class="text-sm sm:text-base font-bold text-white tracking-tight">AMIRUL FIRMAN</span>
+                    </div>
+                </a>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+                    <a href="#hero" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-emerald-100 hover:text-gold-soft hover:bg-emerald-900/50 transition">Utama</a>
+                    <a href="#profil" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-emerald-100 hover:text-gold-soft hover:bg-emerald-900/50 transition">Profil Peribadi</a>
+                    <a href="#akademik" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-emerald-100 hover:text-gold-soft hover:bg-emerald-900/50 transition">Perjalanan Akademik</a>
+                    <a href="#kursus" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-emerald-100 hover:text-gold-soft hover:bg-emerald-900/50 transition">Kursus</a>
+                    <a href="#galeri" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-emerald-100 hover:text-gold-soft hover:bg-emerald-900/50 transition">Galeri</a>
+                </nav>
+
+                <!-- Butang Utiliti Embed Jotform & Menu Mudah Alih -->
+                <div class="flex items-center gap-2">
+                    <button id="openEmbedModalBtn" type="button" title="Dapatkan Kod HTML untuk Jotform" class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-emerald-800/70 hover:bg-emerald-700 border border-gold-soft/40 text-gold-champagne text-xs font-semibold transition cursor-pointer shadow-md">
+                        <i class="fa-solid fa-code text-gold-soft"></i>
+                        <span class="hidden sm:inline">Kod Jotform</span>
+                    </button>
+                    <button id="mobileMenuBtn" type="button" aria-label="Buka Menu" class="md:hidden p-2.5 rounded-xl bg-emerald-900/70 border border-emerald-700/50 text-gold-champagne hover:bg-emerald-800 transition">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mudah Alih (Dropdown) -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-gold-soft/15 bg-emerald-950/95 backdrop-blur-xl px-4 pt-3 pb-5 space-y-1.5">
+            <a href="#hero" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-emerald-100 hover:bg-emerald-900 hover:text-gold-soft">Utama</a>
+            <a href="#profil" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-emerald-100 hover:bg-emerald-900 hover:text-gold-soft">Profil Peribadi</a>
+            <a href="#akademik" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-emerald-100 hover:bg-emerald-900 hover:text-gold-soft">Perjalanan Akademik</a>
+            <a href="#kursus" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-emerald-100 hover:bg-emerald-900 hover:text-gold-soft">Maklumat Kursus</a>
+            <a href="#galeri" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-emerald-100 hover:bg-emerald-900 hover:text-gold-soft">Galeri Foto</a>
+        </div>
+    </header>
+
+    <!-- KANDUNGAN UTAMA -->
+    <main class="relative z-10 w-full">
+
+        <!-- BAHAGIAN 1 – HERO SECTION (PENGENALAN UTAMA) -->
+        <section id="hero" class="min-h-[88vh] flex items-center py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Kolum Kiri: Teks & Identiti -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left reveal-element active">
+                    <!-- Lencana Status Kecil -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
+                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-emerald-800/80 text-gold-champagne border border-gold-soft/40 shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            FUTURE EDUCATOR
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-white/10 text-emerald-200 border border-white/15">
+                            PISMP STUDENT
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-amber-500/15 text-gold-soft border border-gold-soft/30">
+                            ISLAMIC EDUCATION
+                        </span>
+                    </div>
+
+                    <!-- Tajuk Besar Nama Penuh -->
+                    <div class="space-y-2">
+                        <p class="text-xs sm:text-sm uppercase tracking-[0.28em] text-emerald-300 font-semibold">
+                            Digital Student Identity
+                        </p>
+                        <h1 class="text-3xl sm:text-5xl lg:text-[3.35rem] font-extrabold leading-[1.15] tracking-tight text-white">
+                            Amirul Firman <br class="hidden sm:inline">
+                            <span class="text-gold-gradient">Albaihaqi Bin Fauzi</span>
+                        </h1>
+                    </div>
+
+                    <!-- Teks Pengenalan Ringkas -->
+                    <p class="text-base sm:text-lg text-emerald-100/90 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                        “Mengenali seorang bakal pendidik yang komited dalam meneroka dunia pendidikan dan teknologi.”
+                    </p>
+
+                    <!-- Ringkasan Pantas Institusi -->
+                    <div class="inline-flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-emerald-900/50 border border-emerald-700/50 text-xs sm:text-sm text-emerald-200">
+                        <i class="fa-solid fa-building-columns text-gold-soft"></i>
+                        <span>Institut Pendidikan Guru Kampus Tengku Ampuan Afzan</span>
+                    </div>
+
+                    <!-- Butang Interaktif Utama -->
+                    <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                        <a href="#profil" class="group inline-flex items-center gap-3 px-7 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-emerald-700 hover:from-emerald-400 hover:to-emerald-600 text-white font-bold text-sm tracking-wider uppercase shadow-xl shadow-emerald-950/80 border border-gold-soft/50 transition-all duration-300 hover:scale-[1.03]">
+                            <span>KENALI SAYA</span>
+                            <i class="fa-solid fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
+                        </a>
+                        <a href="#akademik" class="inline-flex items-center gap-2.5 px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-gold-champagne font-semibold text-sm border border-gold-soft/30 transition-all">
+                            <i class="fa-regular fa-id-card text-gold-soft"></i>
+                            <span>Kad Pelajar Digital</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kolum Kanan: Bingkai Foto Utama -->
+                <div class="lg:col-span-5 flex justify-center reveal-element active">
+                    <div class="relative w-full max-w-[340px] sm:max-w-[380px]">
+                        <!-- Bingkai Geometri Hiasan Belakang -->
+                        <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-gold-soft/40 via-emerald-500/20 to-gold-champagne/40 blur-md opacity-75"></div>
+                        <div class="absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-gold-soft/60 rounded-tr-3xl pointer-events-none"></div>
+                        <div class="absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-gold-soft/60 rounded-bl-3xl pointer-events-none"></div>
+
+                        <!-- Kontena Foto Utama Boleh Diklik (Lightbox) -->
+                        <div onclick="openLightbox(0)" role="button" tabindex="0" aria-label="Besarkan gambar utama Amirul Firman Albaihaqi" class="relative rounded-[1.75rem] overflow-hidden border-2 border-gold-soft/60 bg-emerald-950 photo-frame-glow cursor-pointer group">
+                            <div class="aspect-[4/5] w-full overflow-hidden">
+                                <img 
+                                    src="https://raw.githubusercontent.com/AMIRUL278/nota/main/WhatsApp%20Image%202026-11-25%20at%2022.55.22.jpeg" 
+                                    alt="Amirul Firman Albaihaqi Bin Fauzi - Foto Utama" 
+                                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                                    onerror="this.src='https://placehold.co/600x750/064e3b/f5e6c8?text=Amirul+Firman'"
+                                >
+                            </div>
+                            
+                            <!-- Lapisan Bawah Gambar -->
+                            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-emerald-950 via-emerald-950/80 to-transparent p-5 pt-12 flex items-end justify-between">
+                                <div>
+                                    <span class="text-[11px] uppercase tracking-widest text-gold-soft font-bold block">Opsyen PAI 3</span>
+                                    <span class="text-sm font-bold text-white">PISMP Ogos 26/30</span>
+                                </div>
+                                <span class="w-10 h-10 rounded-full bg-gold-soft/20 border border-gold-soft/50 flex items-center justify-center text-gold-champagne group-hover:bg-gold-soft group-hover:text-emerald-950 transition-colors">
+                                    <i class="fa-solid fa-expand text-sm"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAHAGIAN 2 – MY PERSONAL PROFILE -->
+        <section id="profil" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-gold-soft/10">
+            <div class="max-w-6xl mx-auto">
+                <!-- Tajuk Seksyen -->
+                <div class="text-center max-w-2xl mx-auto mb-14 reveal-element">
+                    <span class="text-xs font-bold tracking-[0.25em] uppercase text-gold-soft">01 // Identiti Diri</span>
+                    <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-white">My Personal Profile</h2>
+                    <div class="mt-3 w-20 h-1 bg-gradient-to-r from-transparent via-gold-soft to-transparent mx-auto rounded-full"></div>
+                    <p class="mt-4 text-sm sm:text-base text-emerald-200/80">
+                        Butiran lengkap peribadi dan pengenalan rasmi sebagai siswa pendidik di Institut Pendidikan Guru.
+                    </p>
+                </div>
+
+                <!-- Grid Kad Maklumat Peribadi -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+                    
+                    <!-- Kad 1: Nama Penuh -->
+                    <div class="glass-card rounded-2xl p-6 sm:col-span-2 lg:col-span-2 flex flex-col justify-between reveal-element">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-gold-soft text-xl shrink-0">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </div>
+                            <span class="text-[11px] font-semibold uppercase tracking-widest px-3 py-1 rounded-full bg-white/5 text-emerald-300 border border-white/10">Identiti Rasmi</span>
+                        </div>
+                        <div class="mt-6">
+                            <p class="text-xs uppercase tracking-wider text-emerald-300/80 font-semibold">Nama Penuh</p>
+                            <h3 class="mt-1 text-xl sm:text-2xl font-bold text-white tracking-tight">Amirul Firman Albaihaqi Bin Fauzi</h3>
+                        </div>
+                    </div>
+
+                    <!-- Kad 2: Umur -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between reveal-element">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-gold-soft/30 flex items-center justify-center text-gold-soft text-xl shrink-0">
+                                <i class="fa-regular fa-calendar-check"></i>
+                            </div>
+                            <span class="text-[11px] font-semibold uppercase tracking-widest px-3 py-1 rounded-full bg-white/5 text-gold-champagne border border-white/10">Usia</span>
+                        </div>
+                        <div class="mt-6">
+                            <p class="text-xs uppercase tracking-wider text-emerald-300/80 font-semibold">Umur</p>
+                            <h3 class="mt-1 text-2xl font-bold text-gold-champagne">19 Tahun</h3>
+                        </div>
+                    </div>
+
+                    <!-- Kad 3: Asal -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between reveal-element">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-gold-soft text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <span class="text-[11px] font-semibold uppercase tracking-widest px-3 py-1 rounded-full bg-white/5 text-emerald-300 border border-white/10">Negeri Kelahiran</span>
+                        </div>
+                        <div class="mt-6">
+                            <p class="text-xs uppercase tracking-wider text-emerald-300/80 font-semibold">Asal</p>
+                            <h3 class="mt-1 text-xl font-bold text-white">Kota Bharu, Kelantan</h3>
+                        </div>
+                    </div>
+
+                    <!-- Kad 4: Opsyen -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between reveal-element">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-gold-soft/30 flex items-center justify-center text-gold-soft text-xl shrink-0">
+                                <i class="fa-solid fa-book-quran"></i>
+                            </div>
+                            <span class="text-[11px] font-semibold uppercase tracking-widest px-3 py-1 rounded-full bg-white/5 text-gold-champagne border border-white/10">Pengkhususan</span>
+                        </div>
+                        <div class="mt-6">
+                            <p class="text-xs uppercase tracking-wider text-emerald-300/80 font-semibold">Opsyen</p>
+                            <h3 class="mt-1 text-xl font-bold text-white">Pendidikan Islam (PAI 3)</h3>
+                        </div>
+                    </div>
+
+                    <!-- Kad 5: Ambilan & Angka Giliran -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between reveal-element">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-gold-soft text-xl shrink-0">
+                                <i class="fa-solid fa-id-badge"></i>
+                            </div>
+                            <span class="text-[11px] font-semibold uppercase tracking-widest px-3 py-1 rounded-full bg-white/5 text-emerald-300 border border-white/10">PISMP Ogos 26/30</span>
+                        </div>
+                        <div class="mt-6">
+                            <p class="text-xs uppercase tracking-wider text-emerald-300/80 font-semibold">Angka Giliran</p>
+                            <h3 class="mt-1 text-xl font-mono font-bold text-gold-soft tracking-wider">2026112440355</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- BAHAGIAN 3 – MY ACADEMIC JOURNEY (INTERACTIVE DIGITAL STUDENT ID FLIP CARD) -->
+        <section id="akademik" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-gold-soft/10 bg-emerald-950/40">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-12 reveal-element">
+                    <span class="text-xs font-bold tracking-[0.25em] uppercase text-gold-soft">02 // Profil Institusi & Pengajian</span>
+                    <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-white">My Academic Journey</h2>
+                    <div class="mt-3 w-20 h-1 bg-gradient-to-r from-transparent via-gold-soft to-transparent mx-auto rounded-full"></div>
+                    <p class="mt-4 text-sm sm:text-base text-emerald-200/80">
+                        Klik pada <span class="text-gold-soft font-semibold">Kad Identiti Pelajar Digital</span> di bawah untuk membalikkan kad dan melihat maklumat pengesahan akademik.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Kad Interaktif Flip 3D (Kiri / Tengah) -->
+                    <div class="lg:col-span-7 reveal-element">
+                        <div id="studentIdCard" class="flip-perspective cursor-pointer select-none" role="button" tabindex="0" aria-label="Klik untuk membalikkan Kad Pelajar Digital">
+                            <div class="flip-inner">
+                                
+                                <!-- BAHAGIAN DEPAN KAD PELAJAR DIGITAL -->
+                                <div class="flip-front p-6 sm:p-8 bg-gradient-to-br from-emerald-850 via-emerald-925 to-emerald-950 border-2 border-gold-soft/50 shadow-2xl flex flex-col justify-between overflow-hidden">
+                                    <!-- Hiasan Latar Belakang Kad -->
+                                    <div class="absolute right-[-30px] top-[-30px] w-48 h-48 rounded-full bg-gold-soft/10 blur-2xl pointer-events-none"></div>
+                                    
+                                    <!-- Header Kad -->
+                                    <div class="flex items-start justify-between gap-4 border-b border-gold-soft/20 pb-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-11 h-11 rounded-xl bg-gold-soft/15 border border-gold-soft/50 flex items-center justify-center text-gold-champagne">
+                                                <i class="fa-solid fa-landmark text-lg"></i>
+                                            </div>
+                                            <div>
+                                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-gold-soft block">Kementerian Pendidikan Malaysia</span>
+                                                <h3 class="text-sm sm:text-base font-bold text-white leading-snug">
+                                                    Institut Pendidikan Guru Kampus Tengku Ampuan Afzan
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <span class="px-2.5 py-1 rounded-lg bg-emerald-500/20 border border-emerald-400/40 text-[10px] font-bold uppercase tracking-wider text-emerald-300 shrink-0">
+                                            AKTIF
+                                        </span>
+                                    </div>
+
+                                    <!-- Kandungan Tengah Kad -->
+                                    <div class="my-5 flex flex-col sm:flex-row items-center sm:items-start gap-5">
+                                        <img 
+                                            src="https://raw.githubusercontent.com/AMIRUL278/nota/main/WhatsApp%20Image%202026-11-25%20at%2022.55.22.jpeg" 
+                                            alt="Foto Kad Pelajar" 
+                                            class="w-20 h-24 sm:w-24 sm:h-28 rounded-2xl object-cover object-top border-2 border-gold-soft/60 shadow-lg shrink-0"
+                                            onerror="this.src='https://placehold.co/200x240/064e3b/f5e6c8?text=AF'"
+                                        >
+                                        <div class="text-center sm:text-left space-y-2 flex-1">
+                                            <div>
+                                                <span class="text-[11px] uppercase tracking-wider text-emerald-300/80 block">Nama Siswa Pendidik</span>
+                                                <p class="text-base sm:text-lg font-extrabold text-white">Amirul Firman Albaihaqi Bin Fauzi</p>
+                                            </div>
+                                            <div class="grid grid-cols-2 gap-3 pt-1">
+                                                <div>
+                                                    <span class="text-[10px] uppercase tracking-wider text-emerald-300/80 block">Opsyen</span>
+                                                    <p class="text-xs sm:text-sm font-bold text-gold-champagne">Pendidikan Islam (PAI 3)</p>
+                                                </div>
+                                                <div>
+                                                    <span class="text-[10px] uppercase tracking-wider text-emerald-300/80 block">Ambilan</span>
+                                                    <p class="text-xs sm:text-sm font-bold text-white">PISMP Ogos 26/30</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Footer Kad -->
+                                    <div class="pt-3 border-t border-gold-soft/20 flex items-center justify-between text-xs">
+                                        <div>
+                                            <span class="text-[10px] uppercase text-emerald-300/70 block">Angka Giliran</span>
+                                            <span class="font-mono font-bold text-gold-soft tracking-widest text-sm">2026112440355</span>
+                                        </div>
+                                        <span class="inline-flex items-center gap-1.5 text-gold-champagne/90 font-semibold text-xs bg-white/5 px-3 py-1.5 rounded-full border border-gold-soft/30">
+                                            <i class="fa-solid fa-rotate"></i> Klik untuk balikkan kad
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- BAHAGIAN BELAKANG KAD PELAJAR DIGITAL -->
+                                <div class="flip-back p-6 sm:p-8 bg-gradient-to-br from-emerald-950 via-emerald-900 to-emerald-850 border-2 border-gold-soft/70 shadow-2xl flex flex-col justify-between">
+                                    <div class="flex items-center justify-between border-b border-gold-soft/25 pb-3">
+                                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-gold-soft">Pengesahan Identiti Digital</span>
+                                        <i class="fa-solid fa-shield-halved text-gold-soft text-lg"></i>
+                                    </div>
+
+                                    <div class="space-y-3.5 my-auto py-3 text-sm">
+                                        <div class="flex justify-between items-center border-b border-white/10 pb-2">
+                                            <span class="text-emerald-200/80 text-xs">Program Pengajian</span>
+                                            <span class="font-semibold text-white text-right">Program Ijazah Sarjana Muda Perguruan (PISMP)</span>
+                                        </div>
+                                        <div class="flex justify-between items-center border-b border-white/10 pb-2">
+                                            <span class="text-emerald-200/80 text-xs">Kampus Pengajian</span>
+                                            <span class="font-semibold text-gold-champagne text-right">IPG Kampus Tengku Ampuan Afzan</span>
+                                        </div>
+                                        <div class="flex justify-between items-center border-b border-white/10 pb-2">
+                                            <span class="text-emerald-200/80 text-xs">Bidang Teras</span>
+                                            <span class="font-semibold text-white text-right">Pendidikan Islam (PAI 3)</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-emerald-200/80 text-xs">Kohort Ambilan</span>
+                                            <span class="font-semibold text-emerald-300 text-right">PISMP Ogos 26/30</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="pt-3 border-t border-gold-soft/25 flex items-center justify-between">
+                                        <span class="text-[11px] font-mono text-emerald-300">ID: 2026112440355</span>
+                                        <span class="inline-flex items-center gap-1.5 text-gold-champagne font-semibold text-xs bg-emerald-800/80 px-3 py-1.5 rounded-full border border-gold-soft/40">
+                                            <i class="fa-solid fa-rotate-left"></i> Kembali ke hadapan
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Garis Masa / Sorotan Akademik (Kanan) -->
+                    <div class="lg:col-span-5 space-y-4 reveal-element">
+                        <div class="glass-card rounded-2xl p-5 flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-gold-soft shrink-0 mt-0.5">
+                                <i class="fa-solid fa-university"></i>
+                            </div>
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-gold-soft">Institusi Pengajian</span>
+                                <h4 class="text-base font-bold text-white mt-0.5">Institut Pendidikan Guru Kampus Tengku Ampuan Afzan</h4>
+                                <p class="text-xs text-emerald-200/80 mt-1">Pusat kecemerlangan latihan perguruan dan pembangunan sahsiah pendidik.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card rounded-2xl p-5 flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-xl bg-amber-500/15 border border-gold-soft/30 flex items-center justify-center text-gold-soft shrink-0 mt-0.5">
+                                <i class="fa-solid fa-mosque"></i>
+                            </div>
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-gold-soft">Opsyen & Ambilan</span>
+                                <h4 class="text-base font-bold text-white mt-0.5">Pendidikan Islam (PAI 3) — PISMP Ogos 26/30</h4>
+                                <p class="text-xs text-emerald-200/80 mt-1">Memperkasa pedagogi Pendidikan Islam seiring arus teknologi pendidikan abad ke-21.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card rounded-2xl p-5 flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-gold-soft shrink-0 mt-0.5">
+                                <i class="fa-solid fa-fingerprint"></i>
+                            </div>
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-gold-soft">Nombor Pendaftaran Rasmi</span>
+                                <h4 class="text-base font-mono font-bold text-gold-champagne mt-0.5">Angka Giliran: 2026112440355</h4>
+                                <p class="text-xs text-emerald-200/80 mt-1">Rekod pendaftaran rasmi siswa pendidik IPG.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- BAHAGIAN 4 – MY COURSE INFORMATION -->
+        <section id="kursus" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-gold-soft/10">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-12 reveal-element">
+                    <span class="text-xs font-bold tracking-[0.25em] uppercase text-gold-soft">03 // Fokus Akademik Semasa</span>
+                    <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-white">My Course Information</h2>
+                    <div class="mt-3 w-20 h-1 bg-gradient-to-r from-transparent via-gold-soft to-transparent mx-auto rounded-full"></div>
+                </div>
+
+                <!-- Digital Course Card Premium -->
+                <div class="glass-card rounded-3xl p-6 sm:p-10 border-2 border-gold-soft/35 relative overflow-hidden reveal-element">
+                    <!-- Lencana Kod Kursus Besar di Latar -->
+                    <div class="absolute -right-6 -bottom-8 text-[6rem] sm:text-[9rem] font-black text-white/[0.03] select-none pointer-events-none tracking-tighter">
+                        EDUP6023
+                    </div>
+
+                    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <!-- Paparan Menonjol Kod Kursus -->
+                        <div class="lg:col-span-4 flex flex-col items-center justify-center p-6 rounded-2xl bg-gradient-to-b from-emerald-800/70 to-emerald-950/90 border border-gold-soft/45 text-center shadow-inner">
+                            <div class="w-14 h-14 rounded-2xl bg-gold-soft/15 border border-gold-soft/40 flex items-center justify-center text-gold-soft text-2xl mb-3">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-[0.25em] text-emerald-300">Kod Kursus</span>
+                            <h3 class="mt-1 text-3xl sm:text-4xl font-black tracking-wider text-gold-gradient font-mono">
+                                EDUP6023
+                            </h3>
+                            <span class="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-200 text-[11px] font-semibold border border-emerald-400/30">
+                                <i class="fa-solid fa-microchip text-gold-soft"></i> Inovasi Digital Pendidikan
+                            </span>
+                        </div>
+
+                        <!-- Butiran Nama Kursus & Pensyarah -->
+                        <div class="lg:col-span-8 space-y-6">
+                            <div>
+                                <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gold-soft mb-2">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                    <span>Nama Kursus</span>
+                                </div>
+                                <h4 class="text-2xl sm:text-3xl font-extrabold text-white leading-snug">
+                                    Teknologi Untuk Pengajaran & Pembelajaran
+                                </h4>
+                                <p class="mt-2 text-sm text-emerald-200/85 leading-relaxed">
+                                    Meneroka integrasi alat digital, reka bentuk media interaktif dan teknologi pendidikan moden bagi memperkasakan penyampaian ilmu Pendidikan Islam secara kreatif dan berkesan.
+                                </p>
+                            </div>
+
+                            <!-- Kotak Pensyarah -->
+                            <div class="p-4 sm:p-5 rounded-2xl bg-emerald-950/70 border border-gold-soft/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/25 to-emerald-700/40 border border-gold-soft/40 flex items-center justify-center text-gold-champagne text-xl shrink-0">
+                                        <i class="fa-solid fa-chalkboard-user"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-[11px] uppercase tracking-wider text-gold-soft font-bold block">Nama Pensyarah</span>
+                                        <p class="text-base sm:text-lg font-bold text-white">Dr. Norraihan Binti Rosman</p>
+                                    </div>
+                                </div>
+                                <button id="toggleCourseNoteBtn" type="button" class="self-start sm:self-center px-4 py-2 rounded-xl bg-emerald-800/80 hover:bg-emerald-700 border border-gold-soft/35 text-xs font-semibold text-gold-champagne transition cursor-pointer">
+                                    <i class="fa-solid fa-circle-info mr-1.5 text-gold-soft"></i>Info Kursus
+                                </button>
+                            </div>
+
+                            <!-- Panel Tambahan Interaktif (Boleh Buka/Tutup) -->
+                            <div id="courseExtraInfo" class="hidden p-4 rounded-2xl bg-emerald-900/40 border border-emerald-600/30 text-xs sm:text-sm text-emerald-100 space-y-2">
+                                <p class="font-semibold text-gold-soft"><i class="fa-solid fa-sparkles mr-1.5"></i>Aplikasi Digital Portfolio:</p>
+                                <p>Biodata digital interaktif ini dibangunkan sebagai manifestasi kemahiran literasi digital dan reka bentuk web pendidikan di bawah bimbingan <strong>Dr. Norraihan Binti Rosman</strong> bagi kursus <strong>EDUP6023 - Teknologi Untuk Pengajaran & Pembelajaran</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAHAGIAN 5 – PERSONAL PHOTO GALLERY -->
+        <section id="galeri" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-gold-soft/10 bg-emerald-950/40">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 reveal-element">
+                    <div>
+                        <span class="text-xs font-bold tracking-[0.25em] uppercase text-gold-soft">04 // Galeri Visual</span>
+                        <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-white">Personal Photo Gallery</h2>
+                        <p class="mt-2 text-sm text-emerald-200/80">Klik pada mana-mana foto untuk paparan skrin penuh beresolusi tinggi.</p>
+                    </div>
+                    <!-- Butang Navigasi Galeri -->
+                    <div class="flex items-center gap-2">
+                        <button type="button" onclick="openLightbox(0)" class="px-4 py-2.5 rounded-xl bg-emerald-800/70 hover:bg-emerald-700 border border-gold-soft/30 text-xs font-semibold text-gold-champagne transition cursor-pointer">
+                            <i class="fa-solid fa-eye mr-1.5 text-gold-soft"></i>Mod Tayangan Penuh
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Susun Atur Grid Galeri 2 Gambar Sebenar -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                    
+                    <!-- Item Galeri 1 -->
+                    <div onclick="openLightbox(0)" role="button" tabindex="0" class="group relative rounded-3xl overflow-hidden border border-gold-soft/35 bg-emerald-950 shadow-2xl cursor-pointer reveal-element">
+                        <div class="aspect-[4/4] sm:aspect-[4/3] w-full overflow-hidden">
+                            <img 
+                                src="https://raw.githubusercontent.com/AMIRUL278/nota/main/WhatsApp%20Image%202026-11-25%20at%2022.55.22.jpeg" 
+                                alt="Potret Rasmi Amirul Firman Albaihaqi 1" 
+                                loading="lazy"
+                                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                                onerror="this.src='https://placehold.co/800x600/064e3b/f5e6c8?text=Foto+Profil+1'"
+                            >
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/95 via-emerald-950/25 to-transparent opacity-90 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                            <div class="flex items-center justify-between gap-4">
+                                <div>
+                                    <span class="text-[11px] font-bold uppercase tracking-widest text-gold-soft">Koleksi Peribadi 01</span>
+                                    <h3 class="text-lg font-bold text-white mt-0.5">Amirul Firman Albaihaqi Bin Fauzi</h3>
+                                    <p class="text-xs text-emerald-200/80">Siswa Pendidik Pendidikan Islam (PAI 3)</p>
+                                </div>
+                                <div class="w-11 h-11 rounded-full bg-gold-soft text-emerald-950 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform shrink-0">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item Galeri 2 -->
+                    <div onclick="openLightbox(1)" role="button" tabindex="0" class="group relative rounded-3xl overflow-hidden border border-gold-soft/35 bg-emerald-950 shadow-2xl cursor-pointer reveal-element">
+                        <div class="aspect-[4/4] sm:aspect-[4/3] w-full overflow-hidden">
+                            <img 
+                                src="https://raw.githubusercontent.com/AMIRUL278/nota/main/WhatsApp%20Image%202026-11-25%20at%2022.59.49.jpeg" 
+                                alt="Potret Rasmi Amirul Firman Albaihaqi 2" 
+                                loading="lazy"
+                                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                                onerror="this.src='https://placehold.co/800x600/064e3b/f5e6c8?text=Foto+Profil+2'"
+                            >
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/95 via-emerald-950/25 to-transparent opacity-90 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                            <div class="flex items-center justify-between gap-4">
+                                <div>
+                                    <span class="text-[11px] font-bold uppercase tracking-widest text-gold-soft">Koleksi Peribadi 02</span>
+                                    <h3 class="text-lg font-bold text-white mt-0.5">Identiti Bakal Pendidik</h3>
+                                    <p class="text-xs text-emerald-200/80">IPG Kampus Tengku Ampuan Afzan</p>
+                                </div>
+                                <div class="w-11 h-11 rounded-full bg-gold-soft text-emerald-950 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform shrink-0">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- BAHAGIAN 6 – CLOSING SECTION -->
+        <footer class="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 border-t border-gold-soft/20 relative overflow-hidden">
+            <div class="max-w-4xl mx-auto text-center space-y-8 reveal-element">
+                <!-- Ikon Kaligrafi / Akademik -->
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-700 to-emerald-950 border border-gold-soft/50 flex items-center justify-center mx-auto shadow-xl">
+                    <i class="fa-solid fa-feather-pointed text-2xl text-gold-soft"></i>
+                </div>
+
+                <!-- Kata-Kata Hikmah Utama -->
+                <blockquote class="space-y-3">
+                    <p class="text-2xl sm:text-4xl font-extrabold text-gold-gradient leading-tight tracking-tight">
+                        “Ilmu Membina Masa Depan, Pendidikan Membentuk Insan.”
+                    </p>
+                </blockquote>
+
+                <div class="w-28 h-[1px] bg-gradient-to-r from-transparent via-gold-soft/60 to-transparent mx-auto"></div>
+
+                <!-- Identiti Penutup -->
+                <div class="space-y-1.5">
+                    <h3 class="text-base sm:text-lg font-extrabold tracking-widest text-white uppercase">
+                        AMIRUL FIRMAN ALBAIHAQI BIN FAUZI
+                    </h3>
+                    <p class="text-xs sm:text-sm font-semibold tracking-[0.18em] text-emerald-300 uppercase">
+                        PENDIDIKAN ISLAM | PISMP | IPG KAMPUS TENGKU AMPUAN AFZAN
+                    </p>
+                </div>
+
+                <!-- Pautan Pantas & Hak Cipta -->
+                <div class="pt-6 text-xs text-emerald-400/70">
+                    <p>Digital Student Identity &bull; EDUP6023 Teknologi Untuk Pengajaran & Pembelajaran</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- BUTANG BACK TO TOP -->
+    <button id="backToTopBtn" type="button" aria-label="Kembali ke atas" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-2xl bg-gradient-to-br from-gold-soft to-gold-rich text-emerald-950 shadow-2xl flex items-center justify-center opacity-0 pointer-events-none translate-y-4 transition-all duration-300 hover:scale-110 cursor-pointer">
+        <i class="fa-solid fa-arrow-up text-lg font-bold"></i>
+    </button>
+
+    <!-- MODAL LIGHTBOX INTERAKTIF UNTUK PAPARAN GAMBAR BESAR -->
+    <div id="lightboxModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-label="Paparan Gambar Penuh">
+        <!-- Butang Tutup -->
+        <button id="closeLightboxBtn" type="button" aria-label="Tutup Paparan" class="absolute top-5 right-5 z-50 w-11 h-11 rounded-full bg-white/10 hover:bg-gold-soft hover:text-emerald-950 text-white border border-white/20 flex items-center justify-center transition cursor-pointer">
+            <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+
+        <!-- Butang Sebelumnya -->
+        <button id="prevPhotoBtn" type="button" aria-label="Gambar Sebelumnya" class="absolute left-3 sm:left-8 z-50 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-emerald-900/80 hover:bg-gold-soft hover:text-emerald-950 text-white border border-gold-soft/40 flex items-center justify-center transition cursor-pointer">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <!-- Kontena Imej Lightbox -->
+        <div class="max-w-3xl w-full flex flex-col items-center">
+            <div class="relative rounded-2xl overflow-hidden border-2 border-gold-soft/50 shadow-2xl bg-emerald-950 max-h-[75vh]">
+                <img id="lightboxImg" src="" alt="Paparan Penuh" class="max-h-[75vh] w-auto object-contain mx-auto">
+            </div>
+            <div class="mt-4 text-center">
+                <p id="lightboxCaption" class="text-sm sm:text-base font-bold text-gold-champagne"></p>
+                <p id="lightboxCounter" class="text-xs text-emerald-300 mt-1"></p>
+            </div>
+        </div>
+
+        <!-- Butang Seterusnya -->
+        <button id="nextPhotoBtn" type="button" aria-label="Gambar Seterusnya" class="absolute right-3 sm:right-8 z-50 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-emerald-900/80 hover:bg-gold-soft hover:text-emerald-950 text-white border border-gold-soft/40 flex items-center justify-center transition cursor-pointer">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- MODAL PENJANA KOD EMBED JOTFORM (IFRAME / HTML) -->
+    <div id="embedModal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Kod Embed Jotform">
+        <div class="glass-card bg-emerald-950/95 border border-gold-soft/50 rounded-3xl max-w-xl w-full p-6 sm:p-8 space-y-5 shadow-2xl">
+            <div class="flex items-center justify-between border-b border-gold-soft/20 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gold-soft/15 border border-gold-soft/40 flex items-center justify-center text-gold-soft">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Integrasi Platform Jotform</h3>
+                        <p class="text-xs text-emerald-300">Salin kod di bawah untuk widget Iframe Embed atau Paragraph HTML</p>
+                    </div>
+                </div>
+                <button id="closeEmbedModalBtn" type="button" class="w-9 h-9 rounded-xl bg-white/5 hover:bg-white/15 text-emerald-200 flex items-center justify-center cursor-pointer">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="space-y-3 text-xs sm:text-sm text-emerald-100">
+                <p>Laman ini telah dioptimumkan dengan <code class="text-gold-soft">width: 100%</code> tanpa skrol mendatar supaya muat dengan sempurna di dalam borang Jotform:</p>
+                
+                <div class="space-y-1.5">
+                    <label class="text-xs font-bold uppercase tracking-wider text-gold-soft block">1. Kod Iframe Responsif (Widget Iframe Embed Jotform):</label>
+                    <textarea id="jotformIframeCode" readonly rows="3" class="w-full rounded-xl bg-black/50 border border-gold-soft/30 p-3 font-mono text-xs text-emerald-200 focus:outline-none"><iframe src="PAUTAN_HOSTING_ANDA_DI_SINI" style="width:100%; min-height:950px; border:none; border-radius:16px; overflow:hidden;" title="Biodata Digital Amirul Firman" loading="lazy"></iframe></textarea>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3 pt-2">
+                    <button id="copyIframeBtn" type="button" class="px-4 py-2.5 rounded-xl bg-gold-soft hover:bg-gold-champagne text-emerald-950 font-bold text-xs transition cursor-pointer">
+                        <i class="fa-regular fa-copy mr-1.5"></i>Salin Kod Iframe
+                    </button>
+                    <button id="copyFullHtmlBtn" type="button" class="px-4 py-2.5 rounded-xl bg-emerald-800 hover:bg-emerald-700 text-white border border-gold-soft/40 font-bold text-xs transition cursor-pointer">
+                        <i class="fa-solid fa-file-code mr-1.5 text-gold-soft"></i>Salin Kod HTML Penuh
+                    </button>
+                </div>
+                <p id="copyFeedbackMsg" class="text-xs font-semibold text-emerald-400 hidden pt-1"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SKRIP VANILLA JAVASCRIPT UNTUK SEMUA FUNGSI INTERAKTIF -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. DATA GALERI GAMBAR SEBENAR
+            const galleryPhotos = [
+                {
+                    url: "https://raw.githubusercontent.com/AMIRUL278/nota/main/WhatsApp%20Image%202026-11-25%20at%2022.55.22.jpeg",
+                    caption: "Amirul Firman Albaihaqi Bin Fauzi — Siswa Pendidik Pendidikan Islam (PAI 3)"
+                },
+                {
+                    url: "https://raw.githubusercontent.com/AMIRUL278/nota/main/WhatsApp%20Image%202026-11-25%20at%2022.59.49.jpeg",
+                    caption: "Amirul Firman Albaihaqi Bin Fauzi — IPG Kampus Tengku Ampuan Afzan"
+                }
+            ];
+
+            let currentPhotoIndex = 0;
+
+            // 2. MENU NAVIGASI MUDAH ALIH
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+
+            // 3. INTERAKTIF FLIP CARD UNTUK KAD PELAJAR DIGITAL
+            const studentIdCard = document.getElementById('studentIdCard');
+            if (studentIdCard) {
+                const toggleFlip = () => studentIdCard.classList.toggle('is-flipped');
+                studentIdCard.addEventListener('click', toggleFlip);
+                studentIdCard.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleFlip();
+                    }
+                });
+            }
+
+            // 4. INTERAKTIF INFO TAMBAHAN KURSUS (EDUP6023)
+            const toggleCourseNoteBtn = document.getElementById('toggleCourseNoteBtn');
+            const courseExtraInfo = document.getElementById('courseExtraInfo');
+            if (toggleCourseNoteBtn && courseExtraInfo) {
+                toggleCourseNoteBtn.addEventListener('click', () => {
+                    courseExtraInfo.classList.toggle('hidden');
+                });
+            }
+
+            // 5. LIGHTBOX INTERAKTIF UNTUK GAMBAR
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxCounter = document.getElementById('lightboxCounter');
+            const closeLightboxBtn = document.getElementById('closeLightboxBtn');
+            const prevPhotoBtn = document.getElementById('prevPhotoBtn');
+            const nextPhotoBtn = document.getElementById('nextPhotoBtn');
+
+            function updateLightboxContent() {
+                const item = galleryPhotos[currentPhotoIndex];
+                lightboxImg.src = item.url;
+                lightboxCaption.textContent = item.caption;
+                lightboxCounter.textContent = `Gambar ${currentPhotoIndex + 1} daripada ${galleryPhotos.length}`;
+            }
+
+            window.openLightbox = function(index) {
+                currentPhotoIndex = index;
+                updateLightboxContent();
+                lightboxModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            };
+
+            function closeLightbox() {
+                lightboxModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+
+            if (closeLightboxBtn) closeLightboxBtn.addEventListener('click', closeLightbox);
+            if (prevPhotoBtn) {
+                prevPhotoBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    currentPhotoIndex = (currentPhotoIndex - 1 + galleryPhotos.length) % galleryPhotos.length;
+                    updateLightboxContent();
+                });
+            }
+            if (nextPhotoBtn) {
+                nextPhotoBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    currentPhotoIndex = (currentPhotoIndex + 1) % galleryPhotos.length;
+                    updateLightboxContent();
+                });
+            }
+
+            if (lightboxModal) {
+                lightboxModal.addEventListener('click', (e) => {
+                    if (e.target === lightboxModal) closeLightbox();
+                });
+            }
+
+            // Sokongan papan kekunci untuk Lightbox
+            document.addEventListener('keydown', (e) => {
+                if (!lightboxModal.classList.contains('hidden')) {
+                    if (e.key === 'Escape') closeLightbox();
+                    if (e.key === 'ArrowLeft') {
+                        currentPhotoIndex = (currentPhotoIndex - 1 + galleryPhotos.length) % galleryPhotos.length;
+                        updateLightboxContent();
+                    }
+                    if (e.key === 'ArrowRight') {
+                        currentPhotoIndex = (currentPhotoIndex + 1) % galleryPhotos.length;
+                        updateLightboxContent();
+                    }
+                }
+            });
+
+            // 6. BUTANG BACK TO TOP & ANIMASI SCROLL REVEAL
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            const revealElements = document.querySelectorAll('.reveal-element');
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 350) {
+                    backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    backToTopBtn.classList.add('opacity-100', 'translate-y-0');
+                } else {
+                    backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                }
+            });
+
+            if (backToTopBtn) {
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // 7. MODAL & SALIN KOD UNTUK JOTFORM
+            const embedModal = document.getElementById('embedModal');
+            const openEmbedModalBtn = document.getElementById('openEmbedModalBtn');
+            const closeEmbedModalBtn = document.getElementById('closeEmbedModalBtn');
+            const copyIframeBtn = document.getElementById('copyIframeBtn');
+            const copyFullHtmlBtn = document.getElementById('copyFullHtmlBtn');
+            const jotformIframeCode = document.getElementById('jotformIframeCode');
+            const copyFeedbackMsg = document.getElementById('copyFeedbackMsg');
+
+            function showCopyFeedback(text) {
+                copyFeedbackMsg.textContent = text;
+                copyFeedbackMsg.classList.remove('hidden');
+                setTimeout(() => copyFeedbackMsg.classList.add('hidden'), 3500);
+            }
+
+            function copyTextFallback(text, successMsg) {
+                const tempTextarea = document.createElement('textarea');
+                tempTextarea.value = text;
+                document.body.appendChild(tempTextarea);
+                tempTextarea.select();
+                try {
+                    document.execCommand('copy');
+                    showCopyFeedback(successMsg);
+                } catch (err) {
+                    showCopyFeedback('Sila salin kod secara manual daripada kotak di atas.');
+                }
+                document.body.removeChild(tempTextarea);
+            }
+
+            if (openEmbedModalBtn) {
+                openEmbedModalBtn.addEventListener('click', () => embedModal.classList.remove('hidden'));
+            }
+            if (closeEmbedModalBtn) {
+                closeEmbedModalBtn.addEventListener('click', () => embedModal.classList.add('hidden'));
+            }
+            if (embedModal) {
+                embedModal.addEventListener('click', (e) => {
+                    if (e.target === embedModal) embedModal.classList.add('hidden');
+                });
+            }
+            if (copyIframeBtn) {
+                copyIframeBtn.addEventListener('click', () => {
+                    copyTextFallback(jotformIframeCode.value, 'Kod Iframe Jotform berjaya disalin ke papan keratan!');
+                });
+            }
+            if (copyFullHtmlBtn) {
+                copyFullHtmlBtn.addEventListener('click', () => {
+                    const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+                    copyTextFallback(fullHtml, 'Keseluruhan kod HTML lengkap berjaya disalin!');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
